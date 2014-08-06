@@ -1,3 +1,3 @@
-function helloWorld() {
-	return "Pants world!";
+function disemvowel(str) {
+	return str.replace(/a|e|i|o|u/gi, "");
 }
