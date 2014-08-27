@@ -1,22 +1,37 @@
 var fizzBuzz = {
-	says : function(num) {
 
-		if (num % 15 == 0) {
-			return "fizzbuzz";
-		}
+	divisibleByThree : function(num) {
+		return num % 3 == 0;
+	},
 
-		if (num % 3 == 0) {
+	divisibleByFive : function(num) {
+		return num % 5 == 0;
+	},
+
+	divisibleByFifteen : function(num) {
+		return num % 15 == 0;
+	},
+
+	saysFizz : function(num) {
+		if (this.divisibleByThree(num)) {
 			return "fizz";
 		}
+	},
 
-		if (num % 5 == 0) {
+	saysBuzz : function(num) {
+		if (this.divisibleByFive(num)) {
 			return "buzz";
 		}
+	},
 
-		return num;
+	saysFizzBuzz: function(num) {
+		if (this.divisibleByFifteen(num)) {
+			return "fizzbuzz";
+		}
 	}
+
 }
 
-//The order in which I put the if statements matters because 15 is divisible by 3 & 5
-//and therefore I need to check for divisible 15 first before going through the other numbers.
-//Although a worthwhile excercise in practicng JS/Jasmine I think I'd like to try this kata a different way. 
+// This approach to Fizzbuzz most resembles the way I know how to do it in Ruby.
+// The logic is separated in separate methods that are then called on the 'Class'.
+// I'm still struggling a bit with concepts in JS so I'm not sure if that last sentence is correct. 
