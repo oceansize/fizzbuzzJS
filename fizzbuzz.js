@@ -1,37 +1,32 @@
-var fizzBuzz = {
+function FizzBuzz(){}
 
-	divisibleByThree : function(num) {
-		return num % 3 == 0;
-	},
+FizzBuzz.prototype.divisibleByThree = function(num) {
+	return num % 3 == 0;
+};
 
-	divisibleByFive : function(num) {
-		return num % 5 == 0;
-	},
+FizzBuzz.prototype.divisibleByFive = function(num) {
+	return num  % 5 == 0;
+};
 
-	divisibleByFifteen : function(num) {
-		return num % 15 == 0;
-	},
+FizzBuzz.prototype.divisibleByFifteen = function(num) {
+	return num % 15 == 0;
+};
 
-	saysFizz : function(num) {
-		if (this.divisibleByThree(num)) {
-			return "fizz";
-		}
-	},
+FizzBuzz.prototype.saysFizz = function(num) {
+	if (this.divisibleByThree(num)) {return "fizz"};
+};
 
-	saysBuzz : function(num) {
-		if (this.divisibleByFive(num)) {
-			return "buzz";
-		}
-	},
+FizzBuzz.prototype.saysBuzz = function(num) {
+	if (this.divisibleByFive(num)) {return "buzz"};
+};
 
-	saysFizzBuzz: function(num) {
-		if (this.divisibleByFifteen(num)) {
-			return "fizzbuzz";
-		}
-	}
+FizzBuzz.prototype.saysFizzbuzz = function(num) {
+	if (this.divisibleByFifteen(num)) {return "fizzbuzz"};
+};
 
-}
-
-// This approach to Fizzbuzz most resembles the way I know how to do it in Ruby.
-// The logic is separated in separate methods that are then called on the 'Class'.
-// I'm still struggling a bit with concepts in JS so I'm not sure if that last sentence is correct. 
+// This approach to Fizzbuzz is also similar to how I learned to do it in Ruby.
+// However, unlike the previous approach the methods are added to the prototype
+// and therefore aren't recreated every time I create a new FizzBuzz object.
+// Again, getting my head wrapped wround the conceptuals means anything I write
+// should be taken with a grain of salt.
+// I'd be curious to know if it's possible to refactor the if statements. 
